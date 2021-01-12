@@ -1,0 +1,8 @@
+med=median(draws,2);
+fifth=prctile(draws,5,2);
+ninetyfifth=prctile(draws,95,2);
+ 
+rowLabels = {'$\kappa_p$', '$\gamma$','$\rho_r$','$\gamma_{\pi}$','$\gamma_{y}$','$\rho_a$','$\sigma_a$','$\rho_g$','$\sigma_g$','$\sigma_z$','$\sigma_{\lambda}$','$\gamma_b$','$\kappa_w$','$\sigma^{nw}$', '$\gamma^{nw}$','$\rho_r^{nw}$','$\gamma_{\pi}^{nw}$','$\gamma_{y}^{nw}$','$\rho_a^{nw}$','$\sigma_a^{nw}$','$\rho_g^{nw}$','$\sigma_g^{nw}$','$\sigma_z^{nw}$','$\sigma_{\lambda}^{nw}$','$\gamma_b^{nw}$','$\sigma^{nw}$', '$\gamma_b$','$\iota_w$','$100\gamma$','$h$','$\lambda_p^{ss}$','$\lambda_w^{ss}$','$L^{ss}$','$\pi^{ss}$','$100 (\beta^{-1}-1)$','$\nu$','$\alpha$','$\xi_w$','$\chi$', '$S$','$\phi_{\pi}$','$\phi_{y}$','$\phi_{dy}$','$\rho_R$','$\rho_z$','$\rho_g$','$\rho_{\mu}$','$\rho_{p}$','$\rho_{w}$','$\rho_b$','$\rho_{mp}$','$\theta_p$','$\theta_w$','$\sigma_{mp}$','$\sigma_{z}$','$\sigma_{g}$','$\sigma_{\mu}$','$\sigma_{p}$','$\sigma_{w}$','$\sigma_{b}$','$\gamma_b$','$\epsilon$','$h$','$\sigma$','$\phi$','$\gamma$','$wage_index$','$\theta$','$\gamma_R$','$\gamma_{\pi}$','$\gamma_y$',...
+    '$\rho_{eb}$','$\rho_{money}$','$\rho_{g}$','$\rho_{z}$','$\sigma_{eb}$','$\sigma_{money}$','$\sigma_{g}$','$\sigma_{z}$'};
+   columnLabels = {'5th percentile', 'median','95th percentile'};
+  matrix2latex([fifth med ninetyfifth], 'equal_weights.tex', 'rowLabels', rowLabels, 'columnLabels', columnLabels, 'alignment', 'c', 'format', '%-6.2f');

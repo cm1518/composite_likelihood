@@ -1,0 +1,27 @@
+%computes sample covariance of first derivative needed for adjustment of
+%posterior CL intervals.
+
+
+
+load results_equal_weights_5_models;
+
+
+%find posterior mode
+mode_ind=min(find(log_posteriors==max(log_posteriors)));
+
+mode=draws(:,mode_ind);
+
+
+step_size=1e-6;% (same as Qu)
+
+
+%loop to compute derivative parameter by parameter using central finite
+%difference scheme
+
+for pp=1:length(setup.initial_parameter)
+    
+    param_for_loop=mode;
+    param_for_loop(pp)=param_for_loop(pp)+step_size*param_for_loop(pp);
+    
+end
+
